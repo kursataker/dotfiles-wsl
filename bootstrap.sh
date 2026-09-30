@@ -11,7 +11,7 @@ ln -sfn "$PWD" "$HOME/.dotfiles"
 
 # -b backup: any existing file home-manager wants to manage gets renamed
 # to <name>.backup instead of blocking the switch
-nix run home-manager/release-26.05 -- switch -b backup --flake .#ramiro
+nix run home-manager/release-26.05 -- switch -b backup --flake .#aker
 
 echo
 echo "Done. To make zsh your login shell:"

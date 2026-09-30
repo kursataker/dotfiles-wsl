@@ -10,7 +10,7 @@
   };
 
   outputs = { nixpkgs, home-manager, ... }: {
-    homeConfigurations."ramiro" = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations."aker" = home-manager.lib.homeManagerConfiguration {
       pkgs = import nixpkgs {
         system = "x86_64-linux";
         config.allowUnfree = true;  # claude-code has a proprietary license

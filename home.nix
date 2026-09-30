@@ -7,8 +7,8 @@ let
 in
 
 {
-  home.username = "ramiro";
-  home.homeDirectory = "/home/ramiro";
+  home.username = "aker";
+  home.homeDirectory = "/home/aker";
   home.stateVersion = "26.05";
   home.packages = with pkgs; [
     # cli i use constantly
@@ -21,6 +21,7 @@ in
     claude-code  # the agent CLI - his repo installs this as a Homebrew cask
     # no nerd font here: fonts render on the WINDOWS side (WezTerm),
     # so Hack Nerd Font lives in the Windows dotfiles repo
+    nodejs_26
   ];
   home.sessionVariables.EDITOR = "nvim";
   # user-installed binaries (the herdr installer targets this dir)
