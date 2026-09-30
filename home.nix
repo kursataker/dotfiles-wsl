@@ -22,6 +22,7 @@ in
     # no nerd font here: fonts render on the WINDOWS side (WezTerm),
     # so Hack Nerd Font lives in the Windows dotfiles repo
     nodejs_26
+    herdr
   ];
   home.sessionVariables.EDITOR = "nvim";
   # user-installed binaries (the herdr installer targets this dir)
