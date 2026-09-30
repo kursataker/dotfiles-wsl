@@ -50,8 +50,8 @@ in
 
   programs.git = {
     enable = true;
-    settings.user.name = "Ramiro Rivas";
-    settings.user.email = "Ramirorivasperez@gmail.com";
+    settings.user.name = "Kursat Aker";
+    settings.user.email = "4950963+kursataker@users.noreply.github.com";
   };
 
   programs.starship = {
