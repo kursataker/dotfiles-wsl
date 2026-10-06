@@ -1,3 +1,4 @@
+onboarding = false
 # herdr - kun's agent multiplexer (video ch. 33:22), replaces tmux day-to-day.
 # Config reference: https://herdr.dev/docs/configuration/
 # Defaults are good; we only change two things.
