@@ -19,10 +19,12 @@ in
     lazygit
     neovim
     claude-code  # the agent CLI - his repo installs this as a Homebrew cask
+    pi-coding-agent  # the pi agent CLI (binary: pi)
     # no nerd font here: fonts render on the WINDOWS side (WezTerm),
     # so Hack Nerd Font lives in the Windows dotfiles repo
     nodejs_26
-    herdr
+    # herdr
+    uv
   ];
   home.sessionVariables.EDITOR = "nvim";
   # user-installed binaries (the herdr installer targets this dir)
