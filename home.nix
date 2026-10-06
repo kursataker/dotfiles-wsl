@@ -28,7 +28,7 @@ in
   ];
   home.sessionVariables.EDITOR = "nvim";
   # user-installed binaries (the herdr installer targets this dir)
-  home.sessionPath = [ "$HOME/.local/bin" ];
+  home.sessionPath = [ "$HOME/.local/bin" "$HOME/.npm-global/bin" ];
 
   # lets `home-manager switch` work as a plain command after the first run
   programs.home-manager.enable = true;
