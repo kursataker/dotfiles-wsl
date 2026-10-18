@@ -25,6 +25,7 @@ in
     nodejs_26
     # herdr
     uv
+    flyctl
   ];
   home.sessionVariables.EDITOR = "nvim";
   # user-installed binaries (the herdr installer targets this dir)
