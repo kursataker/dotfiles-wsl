@@ -7,6 +7,8 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # Add tuios here
+    tuios.url = "github:Gaurav-Gosain/tuios";
   };
 
   outputs = { nixpkgs, home-manager, ... }: {

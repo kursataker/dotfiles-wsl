@@ -1,6 +1,6 @@
 # home.nix - near-verbatim port of kunchenguid's home.nix, minus the Mac parts.
 # nix-darwin doesn't exist on Linux, but home-manager (this file) is the same.
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 let
   dotfiles = "${config.home.homeDirectory}/.dotfiles";
@@ -26,6 +26,8 @@ in
     # herdr
     uv
     flyctl
+    # Add tuios here
+    inputs.tuios.packages.${pkgs.system}.default
   ];
   home.sessionVariables.EDITOR = "nvim";
   # user-installed binaries (the herdr installer targets this dir)
