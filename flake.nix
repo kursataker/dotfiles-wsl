@@ -11,11 +11,12 @@
     tuios.url = "github:Gaurav-Gosain/tuios";
   };
 
-  outputs = { nixpkgs, home-manager, ... }: {
+  outputs = { self, nixpkgs, home-manager, tuios, ... }@inputs: {
     homeConfigurations."aker" = home-manager.lib.homeManagerConfiguration {
       pkgs = import nixpkgs {
         system = "x86_64-linux";
         config.allowUnfree = true;  # claude-code has a proprietary license
+        extraSpecialArgs = { inherit inputs; }; # Pass inputs so home.nix can see them
       };
       modules = [ ./home.nix ];
     };
