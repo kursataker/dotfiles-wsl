@@ -11,6 +11,7 @@ in
   home.homeDirectory = "/home/aker";
   home.stateVersion = "26.05";
   home.packages = with pkgs; [
+  # home.packages = [
     # cli i use constantly
     ripgrep   # fast search
     fd        # fast find
@@ -23,11 +24,14 @@ in
     # no nerd font here: fonts render on the WINDOWS side (WezTerm),
     # so Hack Nerd Font lives in the Windows dotfiles repo
     nodejs_26
+    bun
     # herdr
     uv
     flyctl
     # Add tuios here
-    inputs.tuios.packages.${pkgs.system}.default
+    # inputs.tuios.packages.${pkgs.system}.default
+    # Alternatively, if you want a specific package name from the flake:
+    # inputs.tuios.defaultPackage.${pkgs.system}
   ];
   home.sessionVariables.EDITOR = "nvim";
   # user-installed binaries (the herdr installer targets this dir)
