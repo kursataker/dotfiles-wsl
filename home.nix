@@ -24,6 +24,7 @@ in
     # no nerd font here: fonts render on the WINDOWS side (WezTerm),
     # so Hack Nerd Font lives in the Windows dotfiles repo
     nodejs_26
+    pnpm
     bun
     # herdr
     uv
@@ -32,6 +33,8 @@ in
     # inputs.tuios.packages.${pkgs.system}.default
     # Alternatively, if you want a specific package name from the flake:
     # inputs.tuios.defaultPackage.${pkgs.system}
+    glab #gitlab cli
+    podman
   ];
   home.sessionVariables.EDITOR = "nvim";
   # user-installed binaries (the herdr installer targets this dir)
