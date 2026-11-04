@@ -4,6 +4,12 @@
 
 let
   dotfiles = "${config.home.homeDirectory}/.dotfiles";
+  # WIN_HOME comes from ~/.config/local-env.sh, which is not in git
+  localEnv = ''
+    [ -f "$HOME/.config/local-env.sh" ] && . "$HOME/.config/local-env.sh"
+    export DOCUMENTS="$WIN_HOME/Documents"
+    export PROJECTS="$DOCUMENTS/Projects"
+  '';
 in
 
 {
@@ -28,6 +34,7 @@ in
     pnpm
     bun
     rustup
+    gcc       # C linker (cc) that cargo needs
     # herdr
     uv
     flyctl
@@ -47,12 +54,19 @@ in
   # lets `home-manager switch` work as a plain command after the first run
   programs.home-manager.enable = true;
 
+  # machine-specific values (WIN_HOME) live outside the repo
+  programs.bash = {
+    enable = true;
+    initExtra = localEnv;
+  };
+
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;      # ghost text from history
     syntaxHighlighting.enable = true;  # commands turn green when valid
     initContent = ''
       bindkey '^f' autosuggest-accept
+      ${localEnv}
     '';
     shellAliases = {
       ".." = "cd ..";
