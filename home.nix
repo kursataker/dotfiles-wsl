@@ -85,6 +85,14 @@ in
     settings.user.email = "4950963+kursataker@users.noreply.github.com";
   };
 
+  # GitHub CLI + git credential helper, so HTTPS pushes use the `gh` token.
+  # (~/.config/git/config is a read-only nix store symlink, so
+  # `gh auth setup-git` can't write it - declare it here instead.)
+  programs.gh = {
+    enable = true;
+    gitCredentialHelper.enable = true;
+  };
+
   programs.starship = {
     enable = true;
     settings = {
